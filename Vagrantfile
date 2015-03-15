@@ -14,6 +14,9 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "hashicorp/precise32"
 
+  # URL to download box from local Artifactory Server
+  config.vm.box_url = "http://localhost:8081/artifactory/box-vagrant-local/LubuntuDevBox/Lubuntu32.box"
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -46,7 +49,7 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
     vb.gui = true
-  
+
   #   # Customize the amount of memory on the VM:
   #   vb.memory = "1024"
   end
